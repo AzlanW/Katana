@@ -1,10 +1,8 @@
-const labels = document.querySelectorAll('.label');
+const draggables = document.querySelectorAll('.draggable');
 const dropzones = document.querySelectorAll('.dropzone');
-const checkButton = document.getElementById('check-results');
-const resultContainer = document.getElementById('result');
 
-labels.forEach(label => {
-    label.addEventListener('dragstart', dragStart);
+draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', dragStart);
 });
 
 dropzones.forEach(dropzone => {
@@ -12,34 +10,59 @@ dropzones.forEach(dropzone => {
     dropzone.addEventListener('drop', drop);
 });
 
-function dragStart(e) {
-    e.dataTransfer.setData('text', e.target.textContent);
+function dragStart(event) {
+    event.dataTransfer.setData('text', event.target.id);
 }
 
-function dragOver(e) {
-    e.preventDefault();
+function dragOver(event) {
+    event.preventDefault();
 }
 
-function drop(e) {
-    e.preventDefault();
-    const data = e.dataTransfer.getData('text');
-    e.target.textContent = data;
-    e.target.style.backgroundColor = '#007bff';
-    e.target.style.color = 'white';
-    e.target.style.border = 'none';
+function drop(event) {
+    event.preventDefault();
+    const draggableId = event.dataTransfer.getData('text');
+    const draggableElement = document.getElementById(draggableId);
+    event.target.appendChild(draggableElement);
 }
 
-checkButton.addEventListener('click', () => {
-    let correct = 0;
-    let incorrect = 0;
+document.getElementById('checkButton').addEventListener('click', checkAnswers);
 
-    dropzones.forEach(dropzone => {
-        if (dropzone.textContent === dropzone.dataset.correct) {
-            correct++;
-        } else if (dropzone.textContent !== '') {
-            incorrect++;
+function checkAnswers() {
+    const correctAnswers = {
+        'dropzone-1': 'drag-1',
+        'dropzone-2': 'drag-2',
+        'dropzone-3': 'drag-3',
+        'dropzone-4': 'drag-4',
+        'dropzone-5': 'drag-5',
+        'dropzone-6': 'drag-6',
+        'dropzone-7': 'drag-7',
+        'dropzone-8': 'drag-8',
+        'dropzone-9': 'drag-9',
+        'dropzone-10': 'drag-10',
+        'dropzone-11': 'drag-11',
+        'dropzone-12': 'drag-12',
+        'dropzone-13': 'drag-13',
+        'dropzone-14': 'drag-14',
+        'dropzone-15': 'drag-15',
+        'dropzone-16': 'drag-16',
+        'dropzone-17': 'drag-17',
+        'dropzone-18': 'drag-18',
+    };
+
+    let correctCount = 0;
+    let incorrectCount = 0;
+
+    for (const [zoneId, correctId] of Object.entries(correctAnswers)) {
+        const dropzone = document.getElementById(zoneId);
+        const draggable = dropzone.querySelector('.draggable');
+        
+        if (draggable && draggable.id === correctId) {
+            correctCount++;
+        } else {
+            incorrectCount++;
         }
-    });
+    }
 
-    resultContainer.textContent = `Aciertos: ${correct}, Errores: ${incorrect}`;
-});
+    const result = document.getElementById('result');
+    result.textContent = `Aciertos: ${correctCount}, Errores: ${incorrectCount}`;
+}
