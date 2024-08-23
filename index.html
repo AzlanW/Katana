@@ -3,56 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partes de la Katana</title>
+    <title>Katana Drag & Drop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Arrastra las etiquetas a la parte correcta de la katana</h1>
     <div class="container">
         <div class="image-container">
-            <img src="Katana2.jpg.png" alt="Katana">
-            <!-- Añadir zonas de arrastre con clases identificadoras -->
-            <div class="dropzone" data-correct="Kashira (coronha)" style="top: 50px; left: 60px;"></div>
-            <div class="dropzone" data-correct="Menkumi (ornamento)" style="top: 120px; left: 130px;"></div>
-            <div class="dropzone" data-correct="Tsuka (cabo)" style="top: 190px; left: 20px;"></div>
-            <div class="dropzone" data-correct="Fuchi (colar)" style="top: 270px; left: 190px;"></div>
-            <div class="dropzone" data-correct="Tsuba (guarda)" style="top: 340px; left: 260px;"></div>
-            <div class="dropzone" data-correct="Mune (dorso da espada)" style="top: 410px; left: 330px;"></div>
-            <div class="dropzone" data-correct="Kami (lámina)" style="top: 480px; left: 400px;"></div>
-            <div class="dropzone" data-correct="Hiri (chanfro da lámina)" style="top: 550px; left: 470px;"></div>
-            <div class="dropzone" data-correct="Kissai (ponta da espada)" style="top: 620px; left: 540px;"></div>
-            <div class="dropzone" data-correct="Ito (trança)" style="top: 690px; left: 610px;"></div>
-            <div class="dropzone" data-correct="Same (Forro do cabo)" style="top: 760px; left: 680px;"></div>
-            <div class="dropzone" data-correct="Mekugi (pino)" style="top: 830px; left: 750px;"></div>
-            <div class="dropzone" data-correct="Seppa (espacadores)" style="top: 900px; left: 820px;"></div>
-            <div class="dropzone" data-correct="Ha (parte cortante da lâmina)" style="top: 970px; left: 890px;"></div>
-            <div class="dropzone" data-correct="Koiguchi (boca da bainha)" style="top: 1040px; left: 960px;"></div>
-            <div class="dropzone" data-correct="Sageo (corda)" style="top: 1110px; left: 1030px;"></div>
-            <div class="dropzone" data-correct="Saya (bainha)" style="top: 1180px; left: 1100px;"></div>
-            <div class="dropzone" data-correct="Kojiri (ponta da bainha)" style="top: 1250px; left: 1170px;"></div>
+            <img src="Borrar.png" alt="Katana" class="katana-image">
+            <div id="dropzone-1" class="dropzone"></div>
+            <div id="dropzone-2" class="dropzone"></div>
+            <div id="dropzone-3" class="dropzone"></div>
+            <div id="dropzone-4" class="dropzone"></div>
+            <div id="dropzone-5" class="dropzone"></div>
+            <div id="dropzone-6" class="dropzone"></div>
+            <div id="dropzone-7" class="dropzone"></div>
+            <div id="dropzone-8" class="dropzone"></div>
+            <div id="dropzone-9" class="dropzone"></div>
+            <div id="dropzone-10" class="dropzone"></div>
+            <div id="dropzone-11" class="dropzone"></div>
+            <div id="dropzone-12" class="dropzone"></div>
+            <div id="dropzone-13" class="dropzone"></div>
+            <div id="dropzone-14" class="dropzone"></div>
+            <div id="dropzone-15" class="dropzone"></div>
+            <div id="dropzone-16" class="dropzone"></div>
+            <div id="dropzone-17" class="dropzone"></div>
+            <div id="dropzone-18" class="dropzone"></div>
         </div>
-        <div id="labels" class="labels-container">
-            <div class="label" draggable="true">Kashira (coronha)</div>
-            <div class="label" draggable="true">Menkumi (ornamento)</div>
-            <div class="label" draggable="true">Tsuka (cabo)</div>
-            <div class="label" draggable="true">Fuchi (colar)</div>
-            <div class="label" draggable="true">Tsuba (guarda)</div>
-            <div class="label" draggable="true">Mune (dorso da espada)</div>
-            <div class="label" draggable="true">Kami (lámina)</div>
-            <div class="label" draggable="true">Hiri (chanfro da lámina)</div>
-            <div class="label" draggable="true">Kissai (ponta da espada)</div>
-            <div class="label" draggable="true">Ito (trança)</div>
-            <div class="label" draggable="true">Same (Forro do cabo)</div>
-            <div class="label" draggable="true">Mekugi (pino)</div>
-            <div class="label" draggable="true">Seppa (espacadores)</div>
-            <div class="label" draggable="true">Ha (parte cortante da lâmina)</div>
-            <div class="label" draggable="true">Koiguchi (boca da bainha)</div>
-            <div class="label" draggable="true">Sageo (corda)</div>
-            <div class="label" draggable="true">Saya (bainha)</div>
-            <div class="label" draggable="true">Kojiri (ponta da bainha)</div>
+        <div class="labels-container">
+            <div id="drag-1" class="draggable" draggable="true">Kashira (coronha)</div>
+            <div id="drag-2" class="draggable" draggable="true">Menkumi (ornamento)</div>
+            <div id="drag-3" class="draggable" draggable="true">Tsuka (cabo)</div>
+            <div id="drag-4" class="draggable" draggable="true">Fuchi (colar)</div>
+            <div id="drag-5" class="draggable" draggable="true">Tsuba (guarda)</div>
+            <div id="drag-6" class="draggable" draggable="true">Mune (dorso da espada)</div>
+            <div id="drag-7" class="draggable" draggable="true">Kami (lámina)</div>
+            <div id="drag-8" class="draggable" draggable="true">Hiri (chanfro da lámina)</div>
+            <div id="drag-9" class="draggable" draggable="true">Kissai (ponta da espada)</div>
+            <div id="drag-10" class="draggable" draggable="true">Ito (trança)</div>
+            <div id="drag-11" class="draggable" draggable="true">Same (forro do cabo)</div>
+            <div id="drag-12" class="draggable" draggable="true">Mekugi (pino)</div>
+            <div id="drag-13" class="draggable" draggable="true">Seppa (espacadores)</div>
+            <div id="drag-14" class="draggable" draggable="true">Ha (parte cortante da lâmina)</div>
+            <div id="drag-15" class="draggable" draggable="true">Koiguchi (boca da bainha)</div>
+            <div id="drag-16" class="draggable" draggable="true">Sageo (corda)</div>
+            <div id="drag-17" class="draggable" draggable="true">Saya (bainha)</div>
+            <div id="drag-18" class="draggable" draggable="true">Kojiri (ponta da bainha)</div>
         </div>
     </div>
-    <button id="check-results">Checar Resultados</button>
+    <button id="checkButton">Comprobar</button>
     <div id="result"></div>
     <script src="script.js"></script>
 </body>
