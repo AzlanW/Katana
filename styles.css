@@ -1,9 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f4f4f4;
+    text-align: center;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
 }
@@ -14,62 +12,79 @@ h1 {
 
 .container {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .image-container {
     position: relative;
-    flex: 2;
+    max-width: 500px;
 }
 
-img {
-    max-width: 100%;
+.katana-image {
+    width: 100%;
     height: auto;
+}
+
+.dropzone {
+    position: absolute;
+    width: 120px;
+    height: 40px;
+    border: 2px dashed #0000ff;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .labels-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    flex: 1;
+    gap: 10px;
+    max-width: 200px;
 }
 
-.label {
-    background-color: #007bff;
-    color: white;
+.draggable {
     padding: 10px;
-    margin: 5px;
-    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 5px;
-    text-align: center;
-    user-select: none;
+    cursor: grab;
 }
 
-.dropzone {
-    position: absolute;
-    width: 150px;
-    height: 30px;
-    border: 2px dashed #007bff;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#check-results {
+#checkButton {
+    margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #result {
     margin-top: 20px;
     font-size: 18px;
+    font-weight: bold;
 }
+
+/* Ajustes para las posiciones */
+#dropzone-1 { top: 10px; left: 50px; }
+#dropzone-2 { top: 60px; left: 100px; }
+/* Continúa para todas las zonas de acuerdo a su posición en la imagen */
+#dropzone-3 { top: 120px; left: 80px; }
+#dropzone-4 { top: 180px; left: 120px; }
+#dropzone-5 { top: 240px; left: 160px; }
+#dropzone-6 { top: 300px; left: 200px; }
+#dropzone-7 { top: 360px; left: 240px; }
+#dropzone-8 { top: 420px; left: 280px; }
+#dropzone-9 { top: 480px; left: 320px; }
+#dropzone-10 { top: 540px; left: 360px; }
+#dropzone-11 { top: 600px; left: 400px; }
+#dropzone-12 { top: 660px; left: 440px; }
+#dropzone-13 { top: 720px; left: 480px; }
+#dropzone-14 { top: 780px; left: 520px; }
+#dropzone-15 { top: 840px; left: 560px; }
+#dropzone-16 { top: 900px; left: 600px; }
+#dropzone-17 { top: 960px; left: 640px; }
+#dropzone-18 { top: 1020px; left: 680px; }
