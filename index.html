@@ -4,74 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partes de la Katana</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1000px;
-        }
-        .image-container {
-            position: relative;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        .label {
-            background-color: #007bff;
-            color: white;
-            padding: 5px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 150px;
-            text-align: center;
-        }
-        .dropzone {
-            position: absolute;
-            width: 150px;
-            height: 20px;
-            border: 2px dashed #007bff;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Arrastra las etiquetas a la parte correcta de la katana</h1>
     <div class="container">
         <div class="image-container">
             <img src="Katana2.jpg.png" alt="Katana">
-            <!-- Añadir zonas de arrastre -->
-            <div class="dropzone" style="top: 50px; left: 30px;"></div>
-            <div class="dropzone" style="top: 90px; left: 120px;"></div>
-            <div class="dropzone" style="top: 130px; left: 10px;"></div>
-            <div class="dropzone" style="top: 170px; left: 180px;"></div>
-            <div class="dropzone" style="top: 190px; left: 250px;"></div>
-            <div class="dropzone" style="top: 220px; left: 350px;"></div>
-            <div class="dropzone" style="top: 240px; left: 410px;"></div>
-            <div class="dropzone" style="top: 270px; left: 470px;"></div>
-            <div class="dropzone" style="top: 320px; left: 540px;"></div>
-            <div class="dropzone" style="top: 360px; left: 600px;"></div>
-            <div class="dropzone" style="top: 400px; left: 680px;"></div>
-            <div class="dropzone" style="top: 440px; left: 740px;"></div>
-            <div class="dropzone" style="top: 480px; left: 800px;"></div>
-            <div class="dropzone" style="top: 520px; left: 860px;"></div>
-            <div class="dropzone" style="top: 560px; left: 920px;"></div>
-            <div class="dropzone" style="top: 600px; left: 980px;"></div>
-            <div class="dropzone" style="top: 640px; left: 1040px;"></div>
-            <div class="dropzone" style="top: 680px; left: 1100px;"></div>
+            <!-- Añadir zonas de arrastre con clases identificadoras -->
+            <div class="dropzone" data-correct="Kashira (coronha)" style="top: 50px; left: 60px;"></div>
+            <div class="dropzone" data-correct="Menkumi (ornamento)" style="top: 120px; left: 130px;"></div>
+            <div class="dropzone" data-correct="Tsuka (cabo)" style="top: 190px; left: 20px;"></div>
+            <div class="dropzone" data-correct="Fuchi (colar)" style="top: 270px; left: 190px;"></div>
+            <div class="dropzone" data-correct="Tsuba (guarda)" style="top: 340px; left: 260px;"></div>
+            <div class="dropzone" data-correct="Mune (dorso da espada)" style="top: 410px; left: 330px;"></div>
+            <div class="dropzone" data-correct="Kami (lámina)" style="top: 480px; left: 400px;"></div>
+            <div class="dropzone" data-correct="Hiri (chanfro da lámina)" style="top: 550px; left: 470px;"></div>
+            <div class="dropzone" data-correct="Kissai (ponta da espada)" style="top: 620px; left: 540px;"></div>
+            <div class="dropzone" data-correct="Ito (trança)" style="top: 690px; left: 610px;"></div>
+            <div class="dropzone" data-correct="Same (Forro do cabo)" style="top: 760px; left: 680px;"></div>
+            <div class="dropzone" data-correct="Mekugi (pino)" style="top: 830px; left: 750px;"></div>
+            <div class="dropzone" data-correct="Seppa (espacadores)" style="top: 900px; left: 820px;"></div>
+            <div class="dropzone" data-correct="Ha (parte cortante da lâmina)" style="top: 970px; left: 890px;"></div>
+            <div class="dropzone" data-correct="Koiguchi (boca da bainha)" style="top: 1040px; left: 960px;"></div>
+            <div class="dropzone" data-correct="Sageo (corda)" style="top: 1110px; left: 1030px;"></div>
+            <div class="dropzone" data-correct="Saya (bainha)" style="top: 1180px; left: 1100px;"></div>
+            <div class="dropzone" data-correct="Kojiri (ponta da bainha)" style="top: 1250px; left: 1170px;"></div>
         </div>
-        <div id="labels" style="display: flex; flex-direction: column;">
+        <div id="labels" class="labels-container">
             <div class="label" draggable="true">Kashira (coronha)</div>
             <div class="label" draggable="true">Menkumi (ornamento)</div>
             <div class="label" draggable="true">Tsuka (cabo)</div>
@@ -92,36 +52,8 @@
             <div class="label" draggable="true">Kojiri (ponta da bainha)</div>
         </div>
     </div>
-
-    <script>
-        const labels = document.querySelectorAll('.label');
-        const dropzones = document.querySelectorAll('.dropzone');
-
-        labels.forEach(label => {
-            label.addEventListener('dragstart', dragStart);
-        });
-
-        dropzones.forEach(dropzone => {
-            dropzone.addEventListener('dragover', dragOver);
-            dropzone.addEventListener('drop', drop);
-        });
-
-        function dragStart(e) {
-            e.dataTransfer.setData('text', e.target.textContent);
-        }
-
-        function dragOver(e) {
-            e.preventDefault();
-        }
-
-        function drop(e) {
-            e.preventDefault();
-            const data = e.dataTransfer.getData('text');
-            e.target.textContent = data;
-            e.target.style.backgroundColor = '#007bff';
-            e.target.style.color = 'white';
-            e.target.style.border = 'none';
-        }
-    </script>
+    <button id="check-results">Checar Resultados</button>
+    <div id="result"></div>
+    <script src="script.js"></script>
 </body>
 </html>
